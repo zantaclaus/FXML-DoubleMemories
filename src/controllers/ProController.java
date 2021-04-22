@@ -119,7 +119,7 @@ public class ProController implements Initializable {
 
         System.out.println(btnId + " index:" + index + " isOpen:" + myDeck.get(index).isOpen() + " open:" + cardOpen + " isPair:" + myDeck.get(index).isPair());
         if(countPair == 25) {
-            isWinner(event);
+            winnerScene(event);
         }
     }
 
@@ -259,7 +259,7 @@ public class ProController implements Initializable {
             imgPlayer2.setImage(new Image("images/Player-2.png"));
         }
     }
-    private void isWinner(ActionEvent event) throws IOException {
+    private void winnerScene(ActionEvent event) throws IOException {
             /* try {
                 Thread.sleep(2 * 1000);
             } catch (InterruptedException ie) {

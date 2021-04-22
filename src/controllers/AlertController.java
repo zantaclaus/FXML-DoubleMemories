@@ -1,6 +1,7 @@
 package controllers;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -16,17 +17,21 @@ public class AlertController {
 
     public static boolean backToMenu = false;
 
+    @FXML
+    private Button yesBtn;
+
     /* Method */
 
     public static void display() throws IOException {
-        Parent exitParent = FXMLLoader.load(AlertController.class.getResource("../scenes/alert.fxml"));
-        Scene exitScene = new Scene(exitParent);
+        Parent alertParent = FXMLLoader.load(AlertController.class.getResource("../scenes/alert.fxml"));
+        Scene alertScene = new Scene(alertParent);
+        alertScene.getStylesheets().add("styles/style.css");
 
         Stage window1 = new Stage();
         window1.initModality(Modality.APPLICATION_MODAL);
         window1.setTitle("Do you want to exit?");
 
-        window1.setScene(exitScene);
+        window1.setScene(alertScene);
         window1.showAndWait();
     }
 

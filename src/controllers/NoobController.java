@@ -20,7 +20,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class NoobController implements Initializable {
+public class NoobController implements Initializable{
 
     /* Field */
 
@@ -129,11 +129,11 @@ public class NoobController implements Initializable {
         AlertController.display();
         if(AlertController.backToMenu) {
             AlertController.backToMenu = false;
-            Parent exitParent = FXMLLoader.load(getClass().getResource("../scenes/menu.fxml"));
-            Scene exitScene = new Scene(exitParent);
+            Parent menuParent = FXMLLoader.load(getClass().getResource("../scenes/menu.fxml"));
+            Scene menuScene = new Scene(menuParent);
 
             Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
-            window.setScene(exitScene);
+            window.setScene(menuScene);
             window.show();
         }
     }
