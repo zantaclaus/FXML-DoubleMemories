@@ -2,11 +2,15 @@ package classes;
 
 public class Card {
 
+    /* Field */
+
     private int id = 0;
     private boolean isOpen;
     private boolean isPair;
 
-    Card(int id) {
+    /* Method */
+
+    public Card(int id) {
         this.id = id;
         this.isOpen = false;
         this.isPair = false;

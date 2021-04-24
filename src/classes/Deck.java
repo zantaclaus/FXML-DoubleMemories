@@ -1,6 +1,5 @@
 package classes;
 
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import javafx.scene.image.Image;
 
 import java.util.ArrayList;

@@ -48,6 +48,7 @@ public class NoobController implements Initializable{
     @FXML
     private Label labelPlayer1, labelPlayer2;
     private int scorePlayer1 = 0, scorePlayer2 = 0;
+    public static boolean isDraw = false;
 
     /* Method */
 
@@ -95,7 +96,7 @@ public class NoobController implements Initializable{
         }
 
         // Change Player
-        if(cardOpen == 2) {
+        if(cardOpen == 2 && !myDeck.get(index).isPair()) {
             isPlayer1 = !isPlayer1;
             setPlayer();
         }
@@ -121,7 +122,7 @@ public class NoobController implements Initializable{
 
         // isWinner
         if(countPair == 18) {
-            isWinner(event);
+            winnerScene(event);
         }
     }
 
@@ -185,7 +186,6 @@ public class NoobController implements Initializable{
         cards[35] = card35;
         cards[36] = card36;
     }
-
     private void setButtonToArray() {
         btns[0] = btn0;
         btns[1] = btn1;
@@ -225,7 +225,6 @@ public class NoobController implements Initializable{
         btns[35] = btn35;
         btns[36] = btn36;
     }
-
     private void setPlayer() {
         if(isPlayer1) {
             imgPlayer1.setImage(new Image("images/Player-1.png"));
@@ -236,19 +235,15 @@ public class NoobController implements Initializable{
             imgPlayer2.setImage(new Image("images/Player-2.png"));
         }
     }
+    private void winnerScene(ActionEvent event) throws IOException {
+        if(scorePlayer1 == scorePlayer2) {
+            isDraw = true;
+        }
+        Parent exitParent = FXMLLoader.load(getClass().getResource("../scenes/winner.fxml"));
+        Scene exitScene = new Scene(exitParent);
 
-    private void isWinner(ActionEvent event) throws IOException {
-            /* try {
-                Thread.sleep(2 * 1000);
-            } catch (InterruptedException ie) {
-                Thread.currentThread().interrupt();
-            }*/
-            Parent exitParent = FXMLLoader.load(getClass().getResource("../scenes/winner.fxml"));
-            Scene exitScene = new Scene(exitParent);
-
-            Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
-            window.setScene(exitScene);
-            window.show();
-
+        Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        window.setScene(exitScene);
+        window.show();
     }
 }

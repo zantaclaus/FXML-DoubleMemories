@@ -32,7 +32,10 @@ public class WinnerController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         if(!NoobController.isPlayer1) {
-            winnerImg.setImage(new Image("images/player2win.jpg"));
+            if (NoobController.isDraw || ProController.isDraw)
+                winnerImg.setImage(new Image("images/player1win.jpg"));
+            else
+                winnerImg.setImage(new Image("images/player2win.jpg"));
         }
     }
 }

@@ -48,6 +48,7 @@ public class ProController implements Initializable {
     @FXML
     private Label labelPlayer1, labelPlayer2;
     private int scorePlayer1 = 0, scorePlayer2 = 0;
+    public static boolean isDraw = false;
 
     /* Method */
 
@@ -95,7 +96,7 @@ public class ProController implements Initializable {
         }
 
         // Change Player
-        if(cardOpen == 2) {
+        if(cardOpen == 2 && !myDeck.get(index).isPair()) {
             isPlayer1 = !isPlayer1;
             setPlayer();
         }
@@ -260,11 +261,9 @@ public class ProController implements Initializable {
         }
     }
     private void winnerScene(ActionEvent event) throws IOException {
-            /* try {
-                Thread.sleep(2 * 1000);
-            } catch (InterruptedException ie) {
-                Thread.currentThread().interrupt();
-            }*/
+        if(scorePlayer1 == scorePlayer2) {
+            isDraw = true;
+        }
         Parent exitParent = FXMLLoader.load(getClass().getResource("../scenes/winner.fxml"));
         Scene exitScene = new Scene(exitParent);
 
