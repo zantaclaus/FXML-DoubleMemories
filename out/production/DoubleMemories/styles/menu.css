@@ -1,0 +1,19 @@
+.root{
+    -fx-background-image:url('../images/menuScreen.png');
+}
+
+.btn{
+    -fx-background-color: #2196f3;
+    -fx-font-weight: bold;
+    -fx-font-size: 38;
+    -fx-text-fill: white;
+    -fx-background-radius:12;
+}
+
+.btn:hover{
+    -fx-background-color: white;
+        -fx-font-weight: bold;
+        -fx-font-size: 38;
+        -fx-text-fill: #2196f3;
+        -fx-background-radius:12;
+}
