@@ -1,11 +1,11 @@
 package controllers;
 
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -17,9 +17,6 @@ public class AlertController {
 
     public static boolean backToMenu = false;
 
-    @FXML
-    private Button yesBtn;
-
     /* Method */
 
     public static void display() throws IOException {
@@ -30,6 +27,7 @@ public class AlertController {
         Stage window1 = new Stage();
         window1.initModality(Modality.APPLICATION_MODAL);
         window1.setTitle("Do you want to exit?");
+        window1.getIcons().add(new Image("images/icon.png"));
 
         window1.setScene(alertScene);
         window1.showAndWait();
