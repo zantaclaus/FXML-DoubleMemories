@@ -2,6 +2,7 @@ package controllers;
 
 import classes.Card;
 import classes.Deck;
+import classes.Sound;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -48,7 +49,6 @@ public class ProController implements Initializable {
     @FXML
     private Label labelPlayer1, labelPlayer2;
     private int scorePlayer1 = 0, scorePlayer2 = 0;
-    public static boolean isDraw = false;
 
     /* Method */
 
@@ -67,11 +67,13 @@ public class ProController implements Initializable {
         // Check Card can open?
         if(!myDeck.get(index).isPair() && (!myDeck.get(index).isOpen() || cardOpen == 2)) {
             cardOpen += 1;
+            Sound.soundEffect("click.wav");
 
             cardOpenId.add(myDeck.get(index).getId());
             cardOpenIndex.add(index);
             if(cardOpen == 2)  {
                 if(cardOpenId.get(0) == cardOpenId.get(1)) {
+                    Sound.soundEffect("pair.wav");
                     if(isPlayer1) {
                         scorePlayer1 += 1;
                         labelPlayer1.setText(scorePlayer1+"");
@@ -118,13 +120,14 @@ public class ProController implements Initializable {
             myDeck.get(index).setIsOpen(true);
         }
 
-        System.out.println(btnId + " index:" + index + " isOpen:" + myDeck.get(index).isOpen() + " open:" + cardOpen + " isPair:" + myDeck.get(index).isPair());
+        /* System.out.println(btnId + " index:" + index + " isOpen:" + myDeck.get(index).isOpen() + " open:" + cardOpen + " isPair:" + myDeck.get(index).isPair()); */
         if(countPair == 25) {
             winnerScene(event);
         }
     }
 
     public void menuCLick(ActionEvent event) throws IOException {
+        Sound.soundEffect("menu.wav");
         AlertController.display();
         if(AlertController.backToMenu) {
             AlertController.backToMenu = false;
@@ -261,16 +264,12 @@ public class ProController implements Initializable {
         }
     }
     private void winnerScene(ActionEvent event) throws IOException {
-        if(scorePlayer1 == scorePlayer2) {
-            isDraw = true;
-        }
         Parent exitParent = FXMLLoader.load(getClass().getResource("../scenes/winner.fxml"));
         Scene exitScene = new Scene(exitParent);
 
         Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
         window.setScene(exitScene);
         window.show();
-
     }
 
 

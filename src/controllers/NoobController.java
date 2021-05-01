@@ -2,6 +2,7 @@ package controllers;
 
 import classes.Card;
 import classes.Deck;
+import classes.Sound;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,6 +14,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -67,11 +70,13 @@ public class NoobController implements Initializable{
         // Check Card can open?
         if(!myDeck.get(index).isPair() && (!myDeck.get(index).isOpen() || cardOpen == 2)) {
             cardOpen += 1;
+            Sound.soundEffect("click.wav");
 
             cardOpenId.add(myDeck.get(index).getId());
             cardOpenIndex.add(index);
             if(cardOpen == 2)  {
                 if(cardOpenId.get(0) == cardOpenId.get(1)) {
+                    Sound.soundEffect("pair.wav");
                     if(isPlayer1) {
                         scorePlayer1 += 1;
                         labelPlayer1.setText(scorePlayer1+"");
@@ -118,7 +123,7 @@ public class NoobController implements Initializable{
             myDeck.get(index).setIsOpen(true);
         }
 
-        System.out.println(btnId + " index:" + index + " isOpen:" + myDeck.get(index).isOpen() + " open:" + cardOpen + " isPlair:" + myDeck.get(index).isPair());
+        /* System.out.println(btnId + " index:" + index + " isOpen:" + myDeck.get(index).isOpen() + " open:" + cardOpen + " isPlair:" + myDeck.get(index).isPair()); */
 
         // isWinner
         if(countPair == 18) {
@@ -127,6 +132,7 @@ public class NoobController implements Initializable{
     }
 
     public void menuCLick(ActionEvent event) throws IOException {
+        Sound.soundEffect("menu.wav");
         AlertController.display();
         if(AlertController.backToMenu) {
             AlertController.backToMenu = false;

@@ -1,5 +1,6 @@
 package controllers;
 
+import classes.Sound;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -21,6 +22,8 @@ public class WinnerController implements Initializable {
     private ImageView winnerImg;
 
     public void menuClick(ActionEvent event) throws IOException {
+        Sound.soundEffect("menu.wav");
+
         Parent exitParent = FXMLLoader.load(getClass().getResource("../scenes/menu.fxml"));
         Scene exitScene = new Scene(exitParent);
 
@@ -31,8 +34,8 @@ public class WinnerController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        if(!NoobController.isPlayer1) {
-            if (NoobController.isDraw || ProController.isDraw)
+        if(!NoobController.isPlayer1 || !ProController.isPlayer1) {
+            if (NoobController.isDraw)
                 winnerImg.setImage(new Image("images/Draw.jpg"));
             else
                 winnerImg.setImage(new Image("images/player2win.jpg"));

@@ -1,5 +1,6 @@
 package controllers;
 
+import classes.Sound;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -20,6 +21,7 @@ public class AlertController {
     /* Method */
 
     public static void display() throws IOException {
+
         Parent alertParent = FXMLLoader.load(AlertController.class.getResource("../scenes/alert.fxml"));
         Scene alertScene = new Scene(alertParent);
         alertScene.getStylesheets().add("styles/style.css");
@@ -34,11 +36,13 @@ public class AlertController {
     }
 
     public void noClick(ActionEvent event) {
+        Sound.soundEffect("menu.wav");
         closeWindow(event);
     }
 
     public void yesClick(ActionEvent event) {
         backToMenu = true;
+        Sound.soundEffect("menu.wav");
         closeWindow(event);
     }
 
