@@ -40,5 +40,6 @@ public class WinnerController implements Initializable {
             else
                 winnerImg.setImage(new Image("images/player2win.jpg"));
         }
+        Sound.soundEffect("winner.wav");
     }
 }

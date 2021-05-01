@@ -39,9 +39,7 @@ public class MenuController {
 
     public void proMode(ActionEvent event) throws IOException {
 
-        Media click = new Media("file:///" + System.getProperty("user.dir").replace('\\', '/') + "/src/sounds/Menu.wav");
-        MediaPlayer clickPlayer = new MediaPlayer(click);
-        clickPlayer.play();
+        Sound.soundEffect("menu.wav");
 
         Parent modelParent = FXMLLoader.load(getClass().getResource("../scenes/pro.fxml"));
         Scene modelScene = new Scene(modelParent);
@@ -53,6 +51,7 @@ public class MenuController {
     }
 
     public void exitProgram(ActionEvent event) throws IOException {
+        Sound.soundEffect("menu.wav");
         Stage stage = (Stage) btnExit.getScene().getWindow();
         stage.close();
     }

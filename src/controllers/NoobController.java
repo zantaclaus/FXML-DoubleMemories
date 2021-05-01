@@ -76,7 +76,9 @@ public class NoobController implements Initializable{
             cardOpenIndex.add(index);
             if(cardOpen == 2)  {
                 if(cardOpenId.get(0) == cardOpenId.get(1)) {
+
                     Sound.soundEffect("pair.wav");
+
                     if(isPlayer1) {
                         scorePlayer1 += 1;
                         labelPlayer1.setText(scorePlayer1+"");
@@ -93,6 +95,7 @@ public class NoobController implements Initializable{
                     myDeck.get(cardOpenIndex.get(1)).setIsPair(true);
                     countPair += 1;
                     cardOpen = 0;
+
                 }
 
                 cardOpenId.clear();
