@@ -33,7 +33,7 @@ public class Deck {
 
     private ArrayList<Integer> getIdList() {
         ArrayList<Integer> list = new ArrayList();
-        System.out.println("amount: " + amount);
+        //System.out.println("amount: " + amount);
         int pair = amount / 2;
         for(int i = 1; i <= amount; i++) {
             if (i > pair)
