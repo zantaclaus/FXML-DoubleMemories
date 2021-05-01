@@ -56,7 +56,7 @@ public class ProController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         setCardsToArray();
         setButtonToArray();
-        System.out.println("Pro Mode");
+        //System.out.println("Pro Mode");
     }
 
     public void onBtnClick(ActionEvent event) throws IOException {

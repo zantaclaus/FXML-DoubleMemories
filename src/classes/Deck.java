@@ -49,15 +49,15 @@ public class Deck {
     }
 
     private void setCard() {
-        for(int i = 1; i <= amount; i++) {
-            if (idList.get(i) <= 9)
-                System.out.print("0"+ idList.get(i)+" ");
-            else
-                System.out.print(idList.get(i)+" ");
-            if(i % 9 == 0)
-                System.out.println("");
-        }
-        System.out.println("");
+//        for(int i = 1; i <= amount; i++) {
+//            if (idList.get(i) <= 9)
+//                System.out.print("0"+ idList.get(i)+" ");
+//            else
+//                System.out.print(idList.get(i)+" ");
+//            if(i % 9 == 0)
+//                System.out.println("");
+//        }
+//        System.out.println("");
 
         for(int i = 0; i <= amount; i++) {
             deck.add(new Card(idList.get(i)));

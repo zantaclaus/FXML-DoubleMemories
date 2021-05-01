@@ -57,7 +57,7 @@ public class NoobController implements Initializable{
     public void initialize(URL url, ResourceBundle resourceBundle) {
         setCardsToArray();
         setButtonToArray();
-        System.out.println("Noob Mode");
+        //System.out.println("Noob Mode");
     }
 
     public void onBtnClick(ActionEvent event) throws IOException {
