@@ -58,7 +58,7 @@ public class NoobController implements Initializable{
         setCardsToArray();
         setButtonToArray();
         isPlayer1 = true;
-        System.out.println(isPlayer1);
+        //System.out.println(isPlayer1);
         //System.out.println("Noob Mode");
     }
 
@@ -126,7 +126,7 @@ public class NoobController implements Initializable{
             myDeck.get(index).setIsOpen(true);
         }
 
-         System.out.println(btnId + " index:" + index + " isOpen:" + myDeck.get(index).isOpen() + " open:" + cardOpen + " isPlair:" + myDeck.get(index).isPair());
+         /* System.out.println(btnId + " index:" + index + " isOpen:" + myDeck.get(index).isOpen() + " open:" + cardOpen + " isPlair:" + myDeck.get(index).isPair()); */
 
         // isWinner
         if(countPair == 18) {
