@@ -56,6 +56,7 @@ public class ProController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         setCardsToArray();
         setButtonToArray();
+        isPlayer1 = true;
         //System.out.println("Pro Mode");
     }
 

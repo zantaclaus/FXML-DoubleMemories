@@ -12,7 +12,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("../scenes/menu.fxml"));
-        primaryStage.setTitle("Double Memories");
+        primaryStage.setTitle("Double Memory");
         Scene scene = new Scene(root, 1200, 800);
         scene.getStylesheets().add("styles/style.css");
         primaryStage.getIcons().add(new Image("images/icon.png"));

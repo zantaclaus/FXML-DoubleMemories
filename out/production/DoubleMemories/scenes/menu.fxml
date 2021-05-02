@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
@@ -8,9 +9,18 @@
    <children>
       <Pane layoutX="693.0" layoutY="392.0" prefHeight="371.0" prefWidth="483.0">
          <children>
-            <Button layoutX="17.0" layoutY="14.0" mnemonicParsing="false" onAction="#noobMode" prefHeight="100.0" prefWidth="450.0" styleClass="btn" stylesheets="@../styles/menu.css" text="EASY" />
-            <Button layoutX="17.0" layoutY="136.0" mnemonicParsing="false" onAction="#proMode" prefHeight="100.0" prefWidth="450.0" styleClass="btn" stylesheets="@../styles/menu.css" text="HARD" />
-            <Button fx:id="btnExit" layoutX="17.0" layoutY="258.0" mnemonicParsing="false" onAction="#exitProgram" prefHeight="100.0" prefWidth="450.0" styleClass="btn" stylesheets="@../styles/menu.css" text="EXIT" />
+            <Button layoutX="17.0" layoutY="14.0" mnemonicParsing="false" onAction="#noobMode" prefHeight="100.0" prefWidth="450.0" styleClass="btn" stylesheets="@../styles/menu.css" text="EASY">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button layoutX="17.0" layoutY="136.0" mnemonicParsing="false" onAction="#proMode" prefHeight="100.0" prefWidth="450.0" styleClass="btn" stylesheets="@../styles/menu.css" text="HARD">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button fx:id="btnExit" layoutX="17.0" layoutY="258.0" mnemonicParsing="false" onAction="#exitProgram" prefHeight="100.0" prefWidth="450.0" styleClass="btn" stylesheets="@../styles/menu.css" text="EXIT">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
          </children>
       </Pane>
    </children>
